@@ -1,6 +1,6 @@
 
 
-pub(crate) mod result;
+pub(crate) mod error;
 
 use std::fs::File;
 use std::io::{self,Read};
