@@ -1,0 +1,18 @@
+
+
+# Allow specific file types
+!*.rs
+!*.lock
+!*.toml
+
+# Allow .gitignore itself
+!.gitignore
+
+# Explicitly ignore specific directories and patterns from the original
+debug/
+target/
+**/*.rs.bk
+*.pdb
+**/mutants.out*/
+.idea/
+main
