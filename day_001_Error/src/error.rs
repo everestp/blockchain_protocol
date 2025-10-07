@@ -17,10 +17,11 @@ enum BlockChainError {
 
 
 #[derive(Debug)]
+#[derive(Clone)]
 struct Transaction{
     sender:String,
     receiver:String,
-    amount :i64,
+    amount :u64,
     signature:String
 }
 
@@ -51,7 +52,7 @@ fn validate_balance(balance: u64, required: u64) -> Result<(), BlockChainError> 
 
 fn validate_transaction(tx:&Transaction  , sender_balance:u64)->Result<Transaction , BlockChainError>{
     // check ]
-    if tx.amount= 0 {
+    if tx.amount == 0 {
         return  Err(BlockChainError::InvalidTransaction("Amoount must be positive".to_string()));
 
     }
@@ -62,13 +63,13 @@ fn validate_transaction(tx:&Transaction  , sender_balance:u64)->Result<Transacti
 
     }
       // Check the signature
-    if tx.signature !="valid sig"{
+    if tx.signature !="valid_sig"{
         return Err(BlockChainError::CryptoFailure("Invalid Trasanction ".to_string()));
 
 }
 
 // If all  good then return ok
- return Ok(tx.clone());
+ Ok(tx.clone())
 
 }
 
@@ -81,6 +82,24 @@ fn read_file(path: &str) -> Result<String, io::Error> {
 }
 
 fn main() {
+
+
+    let tx = Transaction{
+        sender :"Everesty".to_string(),
+        receiver:"Paudel".to_string(),
+        amount :50,
+        signature:"valid_sig".to_string(),
+
+
+    };
+    let balance = 50;
+
+  match validate_transaction(&tx, balance){
+   Ok(valid_tx) => println!("Valid transaction: {:?}", valid_tx),
+    Err(e)=>println!("Expected failure :{}",e)
+  }
+
+
    match validate_balance(120, 20){
     Ok(_)=> println!("Balance checked passed"),
     Err(err)=>println!("Balance error :{}",err)
