@@ -1,3 +1,4 @@
+
 use std::fmt;
 use std::{
     error::Error,
@@ -109,4 +110,18 @@ fn main() {
         Ok(content) => println!("File contents: {}", content),
         Err(e) => println!("Error reading file: {}", e),
     }
+
+// test case for failure
+
+
+let invalid_tx = Transaction{amount:200 , ..tx};
+match validate_transaction(&invalid_tx, balance) {
+    Ok(tx)=>println!("Transaction is valid :{tx}",tx),
+    Err(error)=>println!("Error :{}",error)
+    
+}
+
+
+
+
 }
