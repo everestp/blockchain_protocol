@@ -1,6 +1,7 @@
 
 
 pub(crate) mod error;
+mod validators;
 
 use std::fs::File;
 use std::io::{self,Read};
