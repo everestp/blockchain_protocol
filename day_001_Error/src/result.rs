@@ -1,4 +1,26 @@
+use core::fmt;
 use std::{fs::File, io::{self, Read}, task::Context};
+
+
+
+#[derive(Debug)]
+enum BlockChainError{
+    InvalidTransaction(String),
+    InsufficientFunds(u64),
+    CryptoFailure(String),
+    NetworkError(String)
+}
+
+
+impl fmt::Display for BlockChainError {
+    fn fmt(&self , f:&mut fmt::Formatter)->fmt::Result {
+        match self {
+            BlockChainError::InvalidTransaction(msg)=>write!(f ,)
+        }
+    }
+}
+
+
 
 fn read_file(path: &str) -> Result<String, io::Error> {
     let mut file = File::open(path)?;
