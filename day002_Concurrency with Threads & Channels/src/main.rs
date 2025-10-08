@@ -6,7 +6,14 @@ use std::{thread, time::Duration};
 
 fn main() {
 
-     thread::spawn(|| {
+    //moving data into the threads
+    let v = vec![1,2,3,4];
+    let handle = thread::spawn( move|| {
+        println!("Here is the vector :{:?}",v);
+    });
+   handle.join();
+
+     let handle =  thread::spawn( || {
         for   i in 1..5 {
             println!("Thread :{}",i);
             thread::sleep(Duration::from_millis(1500));
@@ -21,3 +28,4 @@ fn main() {
     println!("Hello, world!");
 }
 
+// moving data into Threads
