@@ -1,7 +1,36 @@
-use std::{sync::mpsc, thread::{self, spawn}};
+use std::{sync::mpsc, thread::{self}};
 //mpsc -> multiple prodiucer single consumer 
 
 fn main(){
+
+// next way find the sum
+
+let (tx ,rx)= mpsc::channel();
+for i in 0..=2{
+     let producer = tx.clone();
+     thread::spawn(move || {
+        let  mut ans = 0;
+        for j in 0..10{
+           let mut  ans = ans + (i *10 +j);
+            println!("{}",j)
+        }
+        producer.send(ans).unwrap();
+     });
+}
+ let mut ans = 0;
+ for val in rx {
+    ans = ans +val;
+
+ }
+
+ print!("ANs = {}",ans);
+
+
+
+
+
+
+
 
 //find the sum for 1 to 1000
 let (tx ,rx)= mpsc::channel();
