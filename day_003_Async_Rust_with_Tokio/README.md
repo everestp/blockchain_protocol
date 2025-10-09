@@ -21,7 +21,7 @@ Async programming lets your program handle tasks like network requests without w
   - **Analogy**: Imagine a blockchain node sending requests to multiple peers for the latest block. Instead of waiting for each peer to respond, async lets the node process other tasks (e.g., validating transactions) while awaiting replies.
   - **Why Memory Safe?**: Rust’s ownership model ensures `Future`s are safely managed, preventing issues like dangling pointers or race conditions, common in async C++ or JavaScript.
   - **Example**: Simple async function with Tokio.
-    ```rust:disable-run
+    ```rust
     use tokio::time::{sleep, Duration};
 
     #[tokio::main]
