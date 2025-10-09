@@ -1,0 +1,6 @@
+[package]
+name = "day_003_Async_Rust_with_Tokio"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
