@@ -2,12 +2,37 @@
 
 use reqwest::Client;
 use tokio::time::{sleep, Duration};
+use serde::{Deserialize, Serialize};
 
 
 
+// define the struct  for JSON-RPC request/response
+#[derive(Serialize ,Debug)]
+struct  RpcRequest {
+    jsonrpc:String,
+    id :u64,
+    method:String,
+    params:Vec<serde_json::Value>
+}
+#[derive(Deserialize, Debug)]
+struct RpcResponse {
+   jsonrpc:String,
+   result:BlockHashResult
+}
 
 
 
+#[derive(Deserialize, Debug)]
+struct  BlockHashResult {
+   value:BlockHashValue
+}
+
+
+
+#[derive(Deserialize, Debug)]
+struct  BlockHashValue {
+   blockhash:String
+}
 
 #[tokio::main]
  async  fn main() ->Result<() , reqwest::Error> {
