@@ -3,6 +3,10 @@ name = "day_003_Async_Rust_with_Tokio"
 version = "0.1.0"
 edition = "2024"
 
+[lib]
+proc-macro = true
+
+
 [dependencies]
 tokio = { version = "1.40", features = ["full"] }
 reqwest = { version = "0.12", features = ["json"] }

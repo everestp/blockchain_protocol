@@ -1,0 +1,15 @@
+[package]
+name = "day_004"
+version = "0.1.0"
+edition = "2024"
+
+
+
+
+[dependencies]
+proc-macro2 = "1.0"
+syn = { version = "2.0", features = ["full"] }
+quote = "1.0"
+cargo = "0.91.0"
+expand = "0.3.0"
+serde = "1.0.228"
