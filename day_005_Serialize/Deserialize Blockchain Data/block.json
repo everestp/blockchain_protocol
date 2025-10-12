@@ -1,0 +1,17 @@
+{
+  "id": 1,
+  "timestamp": 1631234567,
+  "transactions": [
+    {
+      "id": 2,
+      "amount": 100,
+      "sender": "Alice"
+    },
+    {
+      "id": 3,
+      "amount": 200,
+      "sender": "Bob"
+    }
+  ],
+  "prev_hash": "8349fc65ebd5d006cb5b4dde8ca28078ae1d2f2b1ef1d5fb6970705153779608"
+}
