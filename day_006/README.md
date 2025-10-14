@@ -4,7 +4,7 @@ Below is a detailed, step-by-step exploration of **Unsafe Rust for Low-Level Cry
 
 ## Day 6: Unsafe Rust for Low-Level Crypto
 
-**Objective**: Master `unsafe` Rust for blockchain tasks like mempool management and cryptographic operations, using safe wrappers to prevent undefined behavior (UB) while optimizing performance. You’ll build a mempool wrapper that uses raw pointers for efficient transaction storage, integrates serialization (Day 5) and hashing (Day 4), and ensures safety for blockchain node reliability.
+**Objective**: Master `unsaafe` Rust for blockchain tasks like mempool management and cryptographic operations, using safe wrappers to prevent undefined behavior (UB) while optimizing performance. You’ll build a mempool wrapper that uses raw pointers for efficient transaction storage, integrates serialization (Day 5) and hashing (Day 4), and ensures safety for blockchain node reliability.
 
 **Prerequisites**:
 - **Tools**: Rustup, Cargo, VS Code with rust-analyzer.
