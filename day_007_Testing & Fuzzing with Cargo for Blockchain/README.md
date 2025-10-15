@@ -16,7 +16,7 @@ Testing ensures blockchain protocols (e.g., transaction validation, block mining
   - **Analogy**: In a blockchain, a PoW solver finds a nonce producing a valid block hash (e.g., Bitcoin’s mining). Unit tests verify the hash function, integration tests check the full mining process, and fuzzing ensures the solver handles malformed inputs without crashing.
   - **Why Memory Safe?**: Rust’s type system ensures test code adheres to ownership and borrowing rules, and `cargo test` runs tests in isolation, preventing side effects like modifying shared state.
   - **Example**: Simple unit test for a transaction validator.
-    ```rust:disable-run
+    ```rust
     fn validate_transaction(amount: u64) -> bool {
         amount <= 1000
     }
