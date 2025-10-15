@@ -5,9 +5,21 @@ Welcome to Day 7 of your Rust-for-blockchain journey! Today, we dive into **test
 **Prerequisites**: Rust basics (ownership, traits), concurrency (threads/channels from Day 2), async programming (Tokio from Day 3), procedural macros (Day 4), serialization (Day 5), and unsafe Rust (Day 6). We’ll use `sha2` for hashing and `afl` for fuzzing.
 
 ---
+## Folder Structure
+- `src/lib.rs`: Core PoW solver logic and unit tests.
+- `src/main.rs`: Main binary to run the PoW solver.
+- `src/bin/fuzz.rs`: Fuzzing binary for AFL.
+- `tests/integration.rs`: Integration tests for end-to-end mining.
+- `in/`: Input files for fuzzing.
+- `out/`: Fuzzing output (created by AFL).
+
+## Setup
+1. Install dependencies:
+   ```bash
+   cargo install afl
 
 ### Step-by-Step Learning Plan
-N
+
 #### Step 1: Understanding Testing in Rust
 Testing ensures blockchain protocols (e.g., transaction validation, block mining) are correct, preventing bugs that could break consensus or crash nodes.
 
@@ -458,6 +470,9 @@ Proof-of-Work (PoW) is a cornerstone of blockchains like Bitcoin, requiring mine
 
 <xaiArtifact artifact_id="ada1fa12-de48-4ed6-894f-32e115dd70a4" artifact_version_id="7c63cc1b-9f6c-4c92-bd85-6e35a2f2dc5b" title="README.md" contentType="text/markdown">
 
+
+
+
 # Day 7: Testing & Fuzzing with Cargo for Blockchain
 
 This guide covers Day 7 of a Rust learning roadmap for blockchain development, focusing on testing and fuzzing with Cargo. You’ll write unit and integration tests for a Proof-of-Work (PoW) solver and set up fuzzing to ensure robustness, simulating a blockchain node’s mining process.
@@ -589,3 +604,9 @@ Questions? Need tweaks or more exercises? Let me know!
 
 This detailed plan equips you to test and fuzz blockchain code, ensuring reliability and robustness. Let me know if you need further clarification, additional exercises, or help debugging tests or fuzzers!
 ```
+
+
+
+
+
+
