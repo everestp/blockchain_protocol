@@ -22,7 +22,7 @@ impl Validator for PoWValidator {
         hash.starts_with(&"0".repeat(self.difficulty))
     }
 }
-
+// hey this is the haf 
 pub struct PoSValidator {
     pub min_stake: u64,
 }
@@ -55,7 +55,7 @@ mod tests {
         let hash = compute_hash(&block);
         assert_eq!(validator.validate(&block), hash.starts_with("0"));
     }
-
+dfh 
     #[test]
     fn test_pos_validator() {
         let block = Block {
